@@ -29,9 +29,7 @@ function App2(){
         {tareas.map((t, index) => (
           <li key={index}>{t}
             <button onClick={() => setTareas (
-              tareas.filter(
-                (element,i) => element!== t 
-              )
+              tareas.filter((element,i) => element!== t )
               )}>X</button>
           </li>
         ))}
