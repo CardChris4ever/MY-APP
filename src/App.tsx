@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 function App(){
-  const [count,setCount]= useState<number>(10);
-  const [nombre,setNombre]= useState<string>("");
+  const [count,setCount] = useState<number>(0);
+  const [nombre,setNombre] = useState<string>("");
+  
   return (
     <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh",flexDirection:"column"}}>
       <input value={nombre} placeholder = "Esbribe tu nombre" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNombre(e.target.value)} />
 
       <h1>Hola {nombre||"Anonime"}</h1>
-
-      {count>15 &&<h2> Llevas {count} clicks </h2>}
+      <h2>Contador: {count} {count > 5 && <h2> que buena onda tienes muchos </h2>  }</h2> 
       <div>
         <button onClick={()=>setCount(count+2)}>Incrementar</button>
         <button onClick={()=>setCount(count-2)}>Decrementar</button>
@@ -24,7 +24,7 @@ function App2(){
 
   return (
     <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh",flexDirection:"column"}}>
-      <h1>Lista de Tareas</h1>
+      <h1>Lista</h1>
       <ul>
         {tareas.map((t, index) => (
           <li key={index}>{t}
