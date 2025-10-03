@@ -12,7 +12,7 @@ function App(){
         {tareas.map((t, index) => (
           <li key={index}>{t}
             <button onClick={() => setTareas (
-              tareas.filter((_,i) => i !== index )
+              tareas.filter((element,_) => element !== t )
               )}>X</button>
           </li>
         ))}
